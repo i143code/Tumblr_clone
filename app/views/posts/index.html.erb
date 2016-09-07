@@ -4,5 +4,11 @@
 </head>
 <body>
 <p>New Posts</p>
+<% @post.each do |post| %>
+<div class="post_wrapper">
+	<h2 class="title"><%=link_to post.title, post_path(post)%></h2>
+	<h2 class="date"><%= time_ago_in_words(post.created_at)%></h2> 
+</div>
+<% end %>
 </body>
 </html>

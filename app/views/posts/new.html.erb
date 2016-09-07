@@ -3,7 +3,7 @@
 	<title></title>
 </head>
 <body>
-<%=form_for :post do |t| %>
+<%=form_for @post do |t| %>
 	<p><%= t.label :title %></p>
 	<p> <%= t.text_field :title %></p>
 	<p><%= t.label :body %></p>
