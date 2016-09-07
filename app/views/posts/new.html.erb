@@ -1,14 +1,10 @@
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-<%=form_for @post do |t| %>
-	<p><%= t.label :title %></p>
-	<p> <%= t.text_field :title %></p>
-	<p><%= t.label :body %></p>
-	<p> <%= t.text_area :body %></p>
+<div id="page_wrapper">
+	<%=form_for @post do |t| %>
+	<p><%= t.label :title %>
+	<%= t.text_field :title %></p>
+	<p><%= t.label :body %>
+	 <%= t.text_area :body %></p>
 	<p><%= t.submit%></p>
 <% end %>
-</body>
-</html>
+</div>
+

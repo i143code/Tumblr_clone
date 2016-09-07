@@ -1,14 +1,9 @@
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-<p>New Posts</p>
+
+
 <% @post.each do |post| %>
 <div class="post_wrapper">
 	<h2 class="title"><%=link_to post.title, post_path(post)%></h2>
-	<h2 class="date"><%= time_ago_in_words(post.created_at)%></h2> 
+	<p class="body"><%= truncate(post.body ,length:100)%></p>
+	<p class="date"><%= time_ago_in_words(post.created_at)%></p> 
 </div>
 <% end %>
-</body>
-</html>
