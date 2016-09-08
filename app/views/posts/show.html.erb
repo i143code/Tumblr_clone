@@ -10,5 +10,13 @@
     	<%= @post.body %>
     </p>
 
+    <div class="comment">
+    	<p><%= @post.comments.count%> </p>
+    	# <%= render "comments/comment" %>
+    	<h3>Join Discussion:</h3>
+    	<%= render "comments/form" %>
+
+    </div>
+
 </div>
 	
