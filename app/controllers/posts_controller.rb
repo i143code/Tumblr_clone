@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+	before_action :authenticate_user! , except: [:index, :show]
 
 	def index
 		@post = Post.all.order('created_at DESC')
@@ -16,10 +17,7 @@ class PostsController < ApplicationController
 			redirect_to @post
 	    else
 	    	render 'new'
-
 	    end
-
-
 	end
 
 	def show
@@ -29,7 +27,6 @@ class PostsController < ApplicationController
 	# edit and upate
 	def edit
 		@post = Post.find(params[:id])
-
 	end
 
 
@@ -42,8 +39,6 @@ class PostsController < ApplicationController
 	    	render 'edit'
 
 	    end
-
-
 	end
 
 	def destroy
